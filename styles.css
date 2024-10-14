@@ -1,0 +1,47 @@
+body {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background: #000;
+  padding: auto;
+  overflow: hidden;
+}
+.ball {
+  position: relative;
+  bottom: 50px;
+  left: calc(100% - 40px);
+  width: 50px;
+  height: 50px;
+  background: repeating-conic-gradient(#413939 0 90deg, #fff 0 180deg);
+  border-radius: 50%;
+  box-shadow: 0 0 20px 0 #000;
+  animation: ball 3s ease-in-out 1s infinite alternate;
+}
+
+.bar {
+  width: 300px;
+  height: 10px;
+  background: #fff;
+  transform: rotate(-15deg);
+  animation: balance 3s ease-in-out 1s alternate infinite;
+}
+
+@keyframes balance {
+  from {
+    transform: rotate(-15deg);
+  }
+  to {
+    transform: rotate(15deg);
+  }
+}
+
+@keyframes ball {
+  from {
+    left: calc(100% - 40px);
+    transform: rotate(360deg);
+  }
+  to {
+    left: calc(0% - 10px);
+    transform: rotate(0deg);
+  }
+}
